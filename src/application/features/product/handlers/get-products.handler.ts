@@ -4,6 +4,7 @@ import { GetProductsQuery } from '../queries/get-products.query';
 import { PaginatedResponse } from '../../application/shared/paginated.response';
 import { ProductDto } from '../dto/product.dto';
 import { ProductDtoMapper } from '../../application/mappers/product.dto.mapper';
+import type { IProductRepository } from '../../../interfaces/product/product.repository.interface';
 
 
 @QueryHandler(GetProductsQuery)
@@ -13,7 +14,7 @@ export class GetProductsHandler
   
   constructor(
     @Inject('PRODUCT_REPOSITORY')
-    private readonly productRepo,
+    private readonly productRepo :IProductRepository,
   ) {}
 
   async execute(query: GetProductsQuery) {

@@ -1,6 +1,6 @@
-import { Product } from '../../domain/entities/product.entity';
+import { Product } from '../../../domain/entities/product.entity';
 
-export interface ProductRepository {
+export interface IProductRepository {
   create(product: Product): Promise<any>;
   findAll(): Promise<any[]>;
   findById(id: number): Promise<any | null>;

@@ -1,7 +1,10 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Inject, NotFoundException, Logger } from '@nestjs/common';
 import { DeleteProductCommand } from '../commands/delete-product.command';
-import type { ILogger } from '../../application/ports/logger.port';
+import type { ILogger } from '../../../interfaces/logger/logger.port';
+
+import type { IProductRepository } from '../../../interfaces/product/product.repository.interface';
+
 
 @CommandHandler(DeleteProductCommand)
 export class DeleteProductHandler
@@ -9,7 +12,7 @@ export class DeleteProductHandler
  
   constructor(
     @Inject('PRODUCT_REPOSITORY')
-    private readonly productRepo,
+    private readonly productRepo:IProductRepository,
     @Inject('LOGGER')
     private readonly logger: ILogger,
   ) { }

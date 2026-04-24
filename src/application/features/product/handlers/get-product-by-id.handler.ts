@@ -1,7 +1,9 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { Inject, NotFoundException } from '@nestjs/common';
 import { GetProductByIdQuery } from '../queries/get-product-by-id.query';
-import { ProductDtoMapper } from '../../application/mappers/product.dto.mapper';
+import { ProductDtoMapper } from '../../../mappers/product/product.dto.mapper';
+
+import type { IProductRepository } from '../../../interfaces/product/product.repository.interface';
 
 @QueryHandler(GetProductByIdQuery)
 export class GetProductByIdHandler
@@ -9,7 +11,7 @@ export class GetProductByIdHandler
 
   constructor(
     @Inject('PRODUCT_REPOSITORY')
-    private readonly productRepo,
+    private readonly productRepo:IProductRepository,
   ) { }
 
   async execute(query: GetProductByIdQuery) {

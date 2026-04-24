@@ -19,5 +19,60 @@ npx prisma migrate dev
  4.PROBAR QUE REDIS FUNCIONA  redis-cli
  Abre Laragon → mira si tienes:
 
-
+src/
+│
+├── domain/
+│   ├── entities/
+│   │   └── product.entity.ts
+│   ├── value-objects/
+│   │   ├── price.vo.ts
+│   │   └── stock.vo.ts
+│   ├── repositories/
+│   │   └── product.repository.ts   👈 INTERFACES
+│
+├── application/
+│   ├── commands/
+│   │   ├── create-product.command.ts
+│   │   ├── update-product.command.ts
+│   │   └── delete-product.command.ts
+│   │
+│   ├── queries/
+│   │   ├── get-products.query.ts
+│   │   └── get-product-by-id.query.ts
+│   │
+│   ├── handlers/
+│   │   ├── create-product.handler.ts
+│   │   ├── update-product.handler.ts
+│   │   ├── delete-product.handler.ts
+│   │   ├── get-products.handler.ts
+│   │   └── get-product-by-id.handler.ts
+│   │
+│   ├── dto/
+│   │   └── product.dto.ts
+│   │
+│   ├── mappers/
+│   │   └── product.dto.mapper.ts
+│
+├── infrastructure/
+│   ├── persistence/
+│   │   ├── prisma/
+│   │   │   └── prisma.service.ts
+│   │   ├── repositories/
+│   │   │   ├── product.repository.impl.ts
+│   │   │   └── category.repository.impl.ts
+│   │
+│   ├── filters/
+│   │   └── product.prisma-filter.ts
+│   │
+│   ├── mappers/
+│   │   └── product.mapper.ts
+│
+├── api/
+│   ├── controllers/
+│   │   └── product.controller.ts
+│
+├── modules/
+│   └── product.module.ts
+│
+└── main.ts
 
