@@ -23,7 +23,14 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# NestJS CQRS Prisma API
+
+Backend API built with:
+
+- NestJS
+- CQRS
+- Prisma
+- Clean Architecture
 
 ## Project setup
 
