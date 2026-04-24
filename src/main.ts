@@ -13,7 +13,7 @@ async function bootstrap() {
     }),
   );
   app.setGlobalPrefix('api');
-  await app.enableVersioning({ type: VersioningType.URI });
+  await app.enableVersioning({ type: VersioningType.URI ,defaultVersion: process.env.API_VERSION || '1'});
   app.useGlobalInterceptors(new ResponseInterceptor());
   app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen(process.env.PORT ?? 3000);

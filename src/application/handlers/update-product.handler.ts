@@ -1,5 +1,5 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { Inject, NotFoundException ,Logger} from '@nestjs/common';
+import { Inject, NotFoundException } from '@nestjs/common';
 import { UpdateProductCommand } from '../commands/update-product.command';
 import { Product } from '../../domain/entities/product.entity';
 
@@ -11,7 +11,6 @@ import { ProductDtoMapper } from '../../application/mappers/product.dto.mapper';
 export class UpdateProductHandler
   implements ICommandHandler<UpdateProductCommand>
 {
-  private readonly logger = new Logger(UpdateProductHandler.name);
   constructor(
     @Inject('PRODUCT_REPOSITORY')
     private readonly productRepo,
@@ -45,7 +44,7 @@ export class UpdateProductHandler
       categoryId ?? existing.categoryId,
       
     );
-    this.logger.log('update product...',updatedProduct);
+    
      const result = await this.productRepo.update(existing.id,updatedProduct);
     return ProductDtoMapper.toDto(result);
   }
