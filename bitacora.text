@@ -1,0 +1,17 @@
+npm run start:dev
+npm run start:dev
+
+ls node_modules/@prisma/client
+
+npm install prisma@6 @prisma/client@6
+npx prisma generate
+npx prisma migrate dev
+
+1. crear migracion:
+npx prisma migrate dev --name add-product-status
+2. aplicar migracion:
+npx prisma migrate dev
+3. ejecutar migracion
+ npx prisma db seed
+
+ URL: http://localhost:3000/api/v1/products?page=1&size=10&search=
