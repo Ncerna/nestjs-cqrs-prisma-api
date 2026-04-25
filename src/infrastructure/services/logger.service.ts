@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { ILogger } from '../../application/ports/logger.port';
+import { ILogger } from '../../application/interfaces/logger/logger.port';
 
 @Injectable()
 export class AppLogger implements ILogger {
@@ -27,6 +27,6 @@ export class AppLogger implements ILogger {
 
   private sendToLoki(level: string, message: any, context?: string) {
     // aquí envías a Loki (o Grafana stack)
-    
+    console.log("send logs an external : ",message )
   }
 }

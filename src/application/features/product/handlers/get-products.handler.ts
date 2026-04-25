@@ -1,9 +1,9 @@
 import { QueryHandler, IQueryHandler } from '@nestjs/cqrs';
 import { Inject } from '@nestjs/common';
 import { GetProductsQuery } from '../queries/get-products.query';
-import { PaginatedResponse } from '../../application/shared/paginated.response';
-import { ProductDto } from '../dto/product.dto';
-import { ProductDtoMapper } from '../../application/mappers/product.dto.mapper';
+import { PaginatedResponse } from '../../../shared/paginated.response';
+import { ProductDto } from '../../../dto/product/product.dto';
+import { ProductDtoMapper } from '../../../mappers/product/product.dto.mapper';
 import type { IProductRepository } from '../../../interfaces/product/product.repository.interface';
 
 

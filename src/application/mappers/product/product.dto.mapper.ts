@@ -1,5 +1,5 @@
 
-import { ProductDto } from '../dto/product.dto';
+import { ProductDto } from '../../dto/product/product.dto';
 export class ProductDtoMapper {
   static toDto(data : any): ProductDto {
     return {

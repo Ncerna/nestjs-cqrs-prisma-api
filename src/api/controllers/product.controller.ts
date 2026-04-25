@@ -4,15 +4,15 @@ import {
 
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
 
-import { CreateProductDto } from '../../application/dto/create-product.dto';
-import { GetProductsDto } from '../../application/dto/get-products.dto';
-import { UpdateProductDto } from '../../application/dto/update-product.dto';
+import { CreateProductDto } from '../../application/dto/product/create-product.dto';
+import { GetProductsDto } from '../../application/dto/product/get-products.dto';
+import { UpdateProductDto } from '../../application/dto/product/update-product.dto';
 
-import { CreateProductCommand } from '../../application/commands/create-product.command';
-import { UpdateProductCommand } from '../../application/commands/update-product.command';
-import { GetProductsQuery } from '../../application/queries/get-products.query';
-import { GetProductByIdQuery } from '../../application/queries/get-product-by-id.query';
-import { DeleteProductCommand } from '../../application/commands/delete-product.command';
+import { CreateProductCommand } from '../../application/features/product/commands/create-product.command';
+import { UpdateProductCommand } from '../../application/features/product/commands/update-product.command';
+import { GetProductsQuery } from '../../application/features/product/queries/get-products.query';
+import { GetProductByIdQuery } from '../../application/features/product/queries/get-product-by-id.query';
+import { DeleteProductCommand } from '../../application/features/product/commands/delete-product.command';
 
 
 
